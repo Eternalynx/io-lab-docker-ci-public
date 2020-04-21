@@ -31,7 +31,7 @@ image:
   # TODO: this build command is incomplete, add last flag of this command that tags image as latest upon building it
 	
   # TODO: last part of this command that tags just built image with a specyfic tag
-	docker build -t $(SCHEMA_NAME):latest \
+	docker build -t $(SCHEMA_NAME):latest -t $(SCHEMA_NAME):1\
 		--build-arg SCHEMA_NAME="$(SCHEMA_NAME)" \
 		--build-arg SCHEMA_DESCRIPTION="$(SCHEMA_DESCRIPTION)" \
 		--build-arg SCHEMA_URL="$(SCHEMA_URL)" \
@@ -41,7 +41,7 @@ image:
 		--build-arg SCHEMA_BUILD_DATE="$(SCHEMA_BUILD_DATE)" \
 		--build-arg SCHEMA_BUILD_VERSION="$(SCHEMA_BUILD_VERSION)" \
 		--build-arg SCHEMA_CMD="$(SCHEMA_CMD)" \
-		-t $(SCHEMA_NAME):specyfic -t $(SCHEMA_NAME):1.0 .
+		-t $(SCHEMA_NAME):specyfic .
 
 push: image
 	# TODO: two commands, first pushes the latest image, second pushes the image tagged with specyfic tag
