@@ -47,6 +47,7 @@ push: image
 	# TODO: two commands, first pushes the latest image, second pushes the image tagged with specyfic tag
 	docker push $(SCHEMA_NAME):latest
 	docker push $(SCHEMA_NAME):specyfic
+	docker push $(SCHEMA_NAME):1
 
 
 
